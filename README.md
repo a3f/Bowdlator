@@ -22,6 +22,16 @@ Stop do it. And being creative and elegant code writer.
 # So what???
 NOTHING MORE!
 
+# Install
+1. Download binary [HERE] (https://github.com/youknowone/parrotim/downloads)
+1. Unzip it
+1. Copy it to '~/Library/Input Methods' or '/Library/Input Methods'
+1. Logout and Login (Cmd+Shift+Q)
+1. Open Preferences -> Language & Text -> Input Source
+1. Select Parrot
+1. Turn on your speaker
+1. Type something
+
 # Lisence
 FREE FOR ALL - usually refered as 'public domain'
 

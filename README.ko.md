@@ -25,6 +25,16 @@ Parrot 은 쓰는 대로 말하는 맥 OS X 입력기입니다.
 # 한국어는?
 안됨
 
+# 설치
+1. [여기] (https://github.com/youknowone/parrotim/downloads) 에서 파일을 받습니다.
+1. 압축을 풉니다.
+1. 복사합니다: '~/Library/Input Methods' or '/Library/Input Methods'
+1. 로그아웃하고 로그인합니다. (Cmd+Shift+Q)
+1. 시스템 환경설정 -> 언어 & 텍스트 -> 입력 소스 를 엽니다.
+1. Parrot 을 고릅니다.
+1. 스피커를 켭니다.
+1. 아무거나 쳐봅니다.
+
 # Lisence
 FREE FOR ALL - usually refered as 'public domain'
 
