@@ -20,7 +20,7 @@ If you are feeling nagging from mom, it mean you are doing same job repeatly rep
 Stop do it. And being creative and elegant code writer.
 
 # So what???
-NOTHING ANYMORE!
+NOTHING MORE!
 
 # Lisence
 FREE FOR ALL - usually refered as 'public domain'
