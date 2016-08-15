@@ -69,7 +69,7 @@ NSString * kCIMLastHangulInputMode = @"CIMLastHangulInputMode";
     for (NSInteger i = 0; i < CIMConfigurationStringItemCount; i++ ) {
         struct CIMConfigurationStringItem item = self->stringItems[i];
         id object = [self->userDefaults objectForKey:item.name];
-        ICLog(TRUE, @"** CIMConfiguration -loadAllConfigurations count: %d / object: %@", i, object);
+        ICLog(TRUE, @"** CIMConfiguration -loadAllConfigurations count: %ld / object: %@", (long)i, object);
         if (object == nil) { object = item.defaultValue; }
         [*item.pConfiguration autorelease];
         *item.pConfiguration = [object retain];

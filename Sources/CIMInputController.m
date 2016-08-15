@@ -30,7 +30,7 @@
 
 - (BOOL)inputText:(NSString *)string key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender
 {
-    ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -inputText:key:modifiers:client  with string: %@ / keyCode: %d / modifier flags: %u / client: %@(%@)", string, keyCode, flags, [[self client] bundleIdentifier], [[self client] class]);
+    ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -inputText:key:modifiers:client  with string: %@ / keyCode: %ld / modifier flags: %lu / client: %@(%@)", string, (long)keyCode, (unsigned long)flags, [[self client] bundleIdentifier], [[self client] class]);
 
     BOOL handled = [InputManager inputText:string key:keyCode modifiers:flags client:self.client]; // 쓸모없는 sender 대신 self.client 전달
     if ([InputManager.currentComposer.commitString length]){
@@ -83,7 +83,7 @@
     NSString *commitString = [InputManager.currentComposer dequeueCommitString];
     if ([commitString length] == 0) return;
 
-    ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -commitComposition: with sender: %@ / strings: %@", sender, commitString);
+    ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -commitComposition: with sender: %@ / strings: %@", sender, commitString ?: @"null");
     [sender insertText:commitString replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
     
     NSString *endian = [(ParrotComposer *)InputManager.currentComposer endian];
@@ -91,6 +91,8 @@
         commitString = [commitString stringByAppendingString:endian];
     }
     // PARROT!
+    
+    
     [[NSTask launchedTaskWithLaunchPath:@"/usr/bin/say" arguments:[NSArray arrayWithObject:commitString]] launch];
 }
 
@@ -98,7 +100,7 @@
 // 현재 입력 중인 글자를 반환한다. -updateComposition: 이 사용
 - (id)composedString:(id)sender {
     NSString *string = InputManager.currentComposer.composedString;
-    ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -composedString: with sender: %@ / return: %@", sender, string);
+    //ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -composedString: with sender: %@ / return: %@", sender, string ?: @"null");
     return string;
 }
 

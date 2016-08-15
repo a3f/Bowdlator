@@ -6,6 +6,7 @@
 //  Copyright 2011 youknowone.org. All rights reserved.
 //
 
+#include <ctype.h>
 #import "ParrotComposer.h"
 
 @implementation ParrotComposer
@@ -68,9 +69,10 @@
         }
     }
     BOOL handled = NO;
-    if ('a' <= chr && chr <= 'z' || 'A' <= chr && chr <= 'Z' || '0' <= chr && chr <= '9') {
+    if (isalnum(chr)) {
         handled = YES;
     }
+
     char *specials = "\"'`,-&%()";
     for (NSInteger i = 0; specials[i] > 0; i++) {
         if ((unichar)specials[i] == chr) {
@@ -81,10 +83,11 @@
     char *nonprefix = " ";
     for (NSInteger i = 0; nonprefix[i] > 0; i++) {
         if ((unichar)nonprefix[i] == chr) {
-            handled = [originalString length] > 0;
+            handled = NO;//[originalString length] > 0;
             break;
         }
     }
+    
     char *postfix = "?!.:;";
     for (NSInteger i = 0; postfix[i] > 0; i++) {
         if ((unichar)postfix[i] == chr) {
