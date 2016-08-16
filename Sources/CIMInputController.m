@@ -105,7 +105,7 @@
 }
 
 - (NSAttributedString *)originalString:(id)sender {
-    ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -originalString: with sender: %@", sender);
+    //ICLog(DEBUG_INPUTCONTROLLER, @"** CIMInputController -originalString: with sender: %@", sender);
     return [[[NSAttributedString alloc] initWithString:[InputManager.currentComposer originalString]] autorelease];
 }
 

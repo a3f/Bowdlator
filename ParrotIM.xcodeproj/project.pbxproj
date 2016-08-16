@@ -20,6 +20,7 @@
 		38863D13140F1A7300A8ED76 /* ICUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D12140F1A7300A8ED76 /* ICUtility.m */; };
 		38863D31140F282100A8ED76 /* CIMInputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D30140F282000A8ED76 /* CIMInputHandler.m */; };
 		38863D36140F421900A8ED76 /* ParrotAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D35140F421800A8ED76 /* ParrotAppDelegate.m */; };
+		B7C1181F1D62A4EF00049435 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C1181E1D62A4EF00049435 /* debug.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,7 @@
 		38863D30140F282000A8ED76 /* CIMInputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIMInputHandler.m; sourceTree = "<group>"; };
 		38863D34140F421800A8ED76 /* ParrotAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParrotAppDelegate.h; sourceTree = "<group>"; };
 		38863D35140F421800A8ED76 /* ParrotAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParrotAppDelegate.m; sourceTree = "<group>"; };
+		B7C1181E1D62A4EF00049435 /* debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = debug.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				38863C6F140E64EB00A8ED76 /* Prefix.pch */,
 				38863C70140E64EB00A8ED76 /* main.m */,
 				38162E4714128A2C0077AA2D /* MainMenu.xib */,
+				B7C1181E1D62A4EF00049435 /* debug.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38863C71140E64EB00A8ED76 /* main.m in Sources */,
+				B7C1181F1D62A4EF00049435 /* debug.m in Sources */,
 				38863C97140E669000A8ED76 /* CIMInputController.m in Sources */,
 				38863D13140F1A7300A8ED76 /* ICUtility.m in Sources */,
 				38863D31140F282100A8ED76 /* CIMInputHandler.m in Sources */,

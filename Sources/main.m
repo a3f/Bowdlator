@@ -6,11 +6,14 @@
 //  Copyright 2011 youknowone.org. All rights reserved.
 //
 
+#include <signal.h>
 int main(int argc, char *argv[])
 {
+    signal(SIGPIPE, SIG_IGN);
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
  
     ICLog(TRUE, @"******* CharmIM initialized! *******");
+    ICLog(TRUE, @__DATE__);
     NSString *mainNibName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"NSMainNibFile"];
     if ([NSBundle loadNibNamed:mainNibName owner:[NSApplication sharedApplication]] == NO) {
         NSLog(@"!! CharmIM fails to load Main Nib File !!");
