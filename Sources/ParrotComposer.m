@@ -101,10 +101,12 @@
 
 static pid_t pcreate(int fds[2], const char *cmd, char **args);
 
+//FIXME what happens with non-characters? arrow keys for example
 - (BOOL)inputText:(NSString *)string_ key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender {
     if (pipes[0] < 0) {
         NSLog(@"Forking");
         pid = pcreate(pipes, "/Users/a3f/symlinks/inputfilter", (char*[]){NULL});
+        NSLog(@"ParrotComposer -pcreate: InputFilter has pid %d.", pid);
         ufd.fd = pipes[1];
     }
     self.endian = nil;
@@ -115,14 +117,15 @@ static pid_t pcreate(int fds[2], const char *cmd, char **args);
         [originalString deleteCharactersInRange:NSMakeRange([originalString length]-1, 1)];
         string_ = @"\b";
     }
+
     NSString *string = [string_ stringByAppendingString:@"\n"];
     ssize_t nbytes;
     nbytes = write(pipes[1], string.UTF8String, string.length);
-    NSLog(@"Wrote %zd bytes", nbytes);
+    NSLog(@"Wrote %zd bytes: [%@]", nbytes, string);
     char buf[160];//what size?
     nbytes = read(pipes[0], buf, sizeof buf);
-    NSLog(@"Read %zd bytes", nbytes);
     buf[nbytes] = '\0';
+    NSLog(@"Read %zd bytes: [%s]", nbytes, buf);
     if (nbytes < 2) {
         NSLog(@"ParrotComposer -inputText: reading failed %d", errno);
         [self cancelComposition];
