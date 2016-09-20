@@ -2,6 +2,6 @@
 
 /* Include your mode strings here.  See TN2128 for details. */
 
-CFBundleName = "Parrot";
-CFBundleDisplayName = "Parrot Input Method";
+CFBundleName = "Bowdlator";
+CFBundleDisplayName = "Bowdlator Input Method";
 

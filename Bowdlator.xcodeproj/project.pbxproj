@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		3802E4651413AA0000256B54 /* CIMConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3802E4641413A9FF00256B54 /* CIMConfiguration.m */; };
 		38162E1414126ACE0077AA2D /* CIMComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38162E1314126ACE0077AA2D /* CIMComposer.m */; };
-		38162E41141281B40077AA2D /* ParrotInputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D2D140F23CD00A8ED76 /* ParrotInputManager.m */; };
 		38162E4614128A2C0077AA2D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38162E4714128A2C0077AA2D /* MainMenu.xib */; };
-		383A93C71414FF1C00235A3B /* ParrotComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 383A93C61414FF1C00235A3B /* ParrotComposer.m */; };
 		38863C64140E64EB00A8ED76 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38863C63140E64EB00A8ED76 /* Cocoa.framework */; };
 		38863C6E140E64EB00A8ED76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38863C6C140E64EB00A8ED76 /* InfoPlist.strings */; };
 		38863C71140E64EB00A8ED76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863C70140E64EB00A8ED76 /* main.m */; };
@@ -19,9 +17,10 @@
 		38863C99140E677900A8ED76 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38863C98140E677900A8ED76 /* InputMethodKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		38863D13140F1A7300A8ED76 /* ICUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D12140F1A7300A8ED76 /* ICUtility.m */; };
 		38863D31140F282100A8ED76 /* CIMInputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D30140F282000A8ED76 /* CIMInputHandler.m */; };
-		38863D36140F421900A8ED76 /* ParrotAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D35140F421800A8ED76 /* ParrotAppDelegate.m */; };
 		B727CB681D8F9A6B00B96B54 /* acceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B727CB671D8F9A6B00B96B54 /* acceptor.m */; };
-		B7C1181F1D62A4EF00049435 /* debug.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C1181E1D62A4EF00049435 /* debug.m */; };
+		B797E2011D914B5500C0799C /* BowdlatorComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B797E1FB1D914B5500C0799C /* BowdlatorComposer.m */; };
+		B797E2031D914B5500C0799C /* BowdlatorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B797E2001D914B5500C0799C /* BowdlatorAppDelegate.m */; };
+		B797E2051D914BF400C0799C /* BowdlatorInputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B797E2041D914BF400C0799C /* BowdlatorInputManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +44,7 @@
 		38162E4714128A2C0077AA2D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		383A93C51414FF1C00235A3B /* ParrotComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParrotComposer.h; sourceTree = "<group>"; };
 		383A93C61414FF1C00235A3B /* ParrotComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParrotComposer.m; sourceTree = "<group>"; };
-		38863C5F140E64EB00A8ED76 /* Parrot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parrot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		38863C5F140E64EB00A8ED76 /* Bowdlator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bowdlator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38863C63140E64EB00A8ED76 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38863C66140E64EB00A8ED76 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		38863C67140E64EB00A8ED76 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -68,7 +67,13 @@
 		B727CB621D8F82D700B96B54 /* logerrno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logerrno.h; sourceTree = "<group>"; };
 		B727CB651D8F891500B96B54 /* acceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acceptor.h; sourceTree = "<group>"; };
 		B727CB671D8F9A6B00B96B54 /* acceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acceptor.m; sourceTree = "<group>"; };
-		B7C1181E1D62A4EF00049435 /* debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = debug.m; sourceTree = "<group>"; };
+		B797E1FB1D914B5500C0799C /* BowdlatorComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowdlatorComposer.m; sourceTree = "<group>"; };
+		B797E1FC1D914B5500C0799C /* BowdlatorComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowdlatorComposer.h; sourceTree = "<group>"; };
+		B797E1FE1D914B5500C0799C /* BowdlatorInputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowdlatorInputManager.h; sourceTree = "<group>"; };
+		B797E1FF1D914B5500C0799C /* BowdlatorAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowdlatorAppDelegate.h; sourceTree = "<group>"; };
+		B797E2001D914B5500C0799C /* BowdlatorAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowdlatorAppDelegate.m; sourceTree = "<group>"; };
+		B797E2041D914BF400C0799C /* BowdlatorInputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowdlatorInputManager.m; sourceTree = "<group>"; };
+		B7B58C4A1D914E14006267CB /* Parrot copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Parrot copy-Info.plist"; path = "/Users/a3f/dl/parrotim/Parrot copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,8 @@
 		38162DD0141124DF0077AA2D /* Composers */ = {
 			isa = PBXGroup;
 			children = (
+				B797E1FB1D914B5500C0799C /* BowdlatorComposer.m */,
+				B797E1FC1D914B5500C0799C /* BowdlatorComposer.h */,
 				38162DCA1410A4A50077AA2D /* CIMComposer.h */,
 				38162E1314126ACE0077AA2D /* CIMComposer.m */,
 				383A93C51414FF1C00235A3B /* ParrotComposer.h */,
@@ -102,13 +109,14 @@
 				38863C69140E64EB00A8ED76 /* Sources */,
 				38863C62140E64EB00A8ED76 /* Frameworks */,
 				38863C60140E64EB00A8ED76 /* Products */,
+				B7B58C4A1D914E14006267CB /* Parrot copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		38863C60140E64EB00A8ED76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38863C5F140E64EB00A8ED76 /* Parrot.app */,
+				38863C5F140E64EB00A8ED76 /* Bowdlator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,7 +161,6 @@
 				B727CB671D8F9A6B00B96B54 /* acceptor.m */,
 				B727CB651D8F891500B96B54 /* acceptor.h */,
 				38162E4714128A2C0077AA2D /* MainMenu.xib */,
-				B7C1181E1D62A4EF00049435 /* debug.m */,
 				B727CB621D8F82D700B96B54 /* logerrno.h */,
 			);
 			name = "Supporting Files";
@@ -171,7 +178,9 @@
 		38863D32140F41B100A8ED76 /* Input Method */ = {
 			isa = PBXGroup;
 			children = (
+				B797E2041D914BF400C0799C /* BowdlatorInputManager.m */,
 				38162DCE1410A95A0077AA2D /* CIMCommon.h */,
+				B797E1FE1D914B5500C0799C /* BowdlatorInputManager.h */,
 				38863D2C140F23CD00A8ED76 /* ParrotInputManager.h */,
 				38863D2D140F23CD00A8ED76 /* ParrotInputManager.m */,
 				38863D2F140F282000A8ED76 /* CIMInputHandler.h */,
@@ -186,6 +195,8 @@
 		38863D33140F41CF00A8ED76 /* OS part */ = {
 			isa = PBXGroup;
 			children = (
+				B797E1FF1D914B5500C0799C /* BowdlatorAppDelegate.h */,
+				B797E2001D914B5500C0799C /* BowdlatorAppDelegate.m */,
 				38863D34140F421800A8ED76 /* ParrotAppDelegate.h */,
 				38863D35140F421800A8ED76 /* ParrotAppDelegate.m */,
 				38863C95140E669000A8ED76 /* CIMInputController.h */,
@@ -197,9 +208,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38863C5E140E64EB00A8ED76 /* Parrot */ = {
+		38863C5E140E64EB00A8ED76 /* Bowdlator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38863C8F140E64EC00A8ED76 /* Build configuration list for PBXNativeTarget "Parrot" */;
+			buildConfigurationList = 38863C8F140E64EC00A8ED76 /* Build configuration list for PBXNativeTarget "Bowdlator" */;
 			buildPhases = (
 				38863C5B140E64EB00A8ED76 /* Sources */,
 				38863C5C140E64EB00A8ED76 /* Frameworks */,
@@ -210,9 +221,9 @@
 			);
 			dependencies = (
 			);
-			name = Parrot;
+			name = Bowdlator;
 			productName = CharmIM;
-			productReference = 38863C5F140E64EB00A8ED76 /* Parrot.app */;
+			productReference = 38863C5F140E64EB00A8ED76 /* Bowdlator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 38863C53140E62D100A8ED76 /* Build configuration list for PBXProject "ParrotIM" */;
+			buildConfigurationList = 38863C53140E62D100A8ED76 /* Build configuration list for PBXProject "Bowdlator" */;
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -242,7 +253,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				38863C5E140E64EB00A8ED76 /* Parrot */,
+				38863C5E140E64EB00A8ED76 /* Bowdlator */,
 			);
 		};
 /* End PBXProject section */
@@ -265,16 +276,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				38863C71140E64EB00A8ED76 /* main.m in Sources */,
-				B7C1181F1D62A4EF00049435 /* debug.m in Sources */,
 				B727CB681D8F9A6B00B96B54 /* acceptor.m in Sources */,
 				38863C97140E669000A8ED76 /* CIMInputController.m in Sources */,
+				B797E2051D914BF400C0799C /* BowdlatorInputManager.m in Sources */,
 				38863D13140F1A7300A8ED76 /* ICUtility.m in Sources */,
 				38863D31140F282100A8ED76 /* CIMInputHandler.m in Sources */,
-				38863D36140F421900A8ED76 /* ParrotAppDelegate.m in Sources */,
+				B797E2031D914B5500C0799C /* BowdlatorAppDelegate.m in Sources */,
 				38162E1414126ACE0077AA2D /* CIMComposer.m in Sources */,
-				38162E41141281B40077AA2D /* ParrotInputManager.m in Sources */,
+				B797E2011D914B5500C0799C /* BowdlatorComposer.m in Sources */,
 				3802E4651413AA0000256B54 /* CIMConfiguration.m in Sources */,
-				383A93C71414FF1C00235A3B /* ParrotComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +423,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		38863C53140E62D100A8ED76 /* Build configuration list for PBXProject "ParrotIM" */ = {
+		38863C53140E62D100A8ED76 /* Build configuration list for PBXProject "Bowdlator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38863C55140E62D100A8ED76 /* Debug */,
@@ -422,7 +432,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38863C8F140E64EC00A8ED76 /* Build configuration list for PBXNativeTarget "Parrot" */ = {
+		38863C8F140E64EC00A8ED76 /* Build configuration list for PBXNativeTarget "Bowdlator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				38863C90140E64EC00A8ED76 /* Debug */,

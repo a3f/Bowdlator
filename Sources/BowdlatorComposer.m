@@ -1,19 +1,10 @@
-//
-//  ParrotComposer.m
-//  ParrotIM
-//
-//  Created by youknowone on 11. 9. 5..
-//  Copyright 2011 youknowone.org. All rights reserved.
-//
-
 #include <poll.h>
 #include <sys/socket.h>
 #include "acceptor.h"
 #include "logerrno.h"
-#import "ParrotComposer.h"
+#import "BowdlatorComposer.h"
 
-@implementation ParrotComposer
-@synthesize endian;
+@implementation BowdlatorComposer
 
 - (id)init {
     NSLog(@"********************-INIT");
@@ -23,8 +14,6 @@
         commitString = [[NSMutableString alloc] init];
         composedString = [[NSMutableString alloc] init];
     }
-    pipes[0] = -1;
-    ufd.events = 0;
     return self;
 }
 
@@ -33,12 +22,6 @@
     [commitString release];
     [originalString release];
     [composedString release];
-    
-    if (pipes[0] >= 0) {
-        close(pipes[0]);
-        close(pipes[1]);
-        pipes[0] = -1;
-    }
     
     [super dealloc];
 }
@@ -68,11 +51,6 @@
 - (void)commitComposition:(id)sender {
     NSLog(@"commitComposition called.");
     
-    if (pipes[0] >= 0) {
-        close(pipes[0]);
-        close(pipes[1]);
-        pipes[0] = -1;
-    }
     [sender insertText:commitString replacementRange:NSMakeRange(NSNotFound, NSNotFound)];
     
     [commitString setString:composedString];
@@ -81,12 +59,6 @@
 
 - (void)cancelComposition {
     NSLog(@"cancelComposition called.");
-    
-    if (pipes[0] >= 0) {
-        close(pipes[0]);
-        close(pipes[1]);
-        pipes[0] = -1;
-    }
     
     [commitString setString:composedString];
     [composedString setString:@""];
@@ -102,11 +74,7 @@
 
 #pragma -
 
-static pid_t pcreate(int fds[2], const char *cmd, char **args);
-
-//FIXME what happens with non-characters? arrow keys for example
 - (BOOL)inputText:(NSString *)string key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender {
-    self.endian = nil;
     //FIXME modifies!
     if (keyCode == 0x33) {
         NSLog(@"Backspace");
@@ -160,7 +128,7 @@ static pid_t pcreate(int fds[2], const char *cmd, char **args);
             if (*pbuf == '\4') {
                 [composedString setString:suggestions[0]];
                 [self cancelComposition];
-                NSLog(@"ParrotComposer -inputText: Ocomposition finished: %@", suggestions[0]);
+                NSLog(@"BowdlatorComposer -inputText: Ocomposition finished: %@", suggestions[0]);
                 return NO;
             }
             NSString *str = [NSString stringWithUTF8String:pbuf];
@@ -172,14 +140,14 @@ static pid_t pcreate(int fds[2], const char *cmd, char **args);
         }
     }
     if (suggestions.count == 0) {
-            NSLog(@"ParrotComposer -inputText: no suggestions received");
+            NSLog(@"BowdlatorComposer -inputText: no suggestions received");
             [self cancelComposition];
             return NO;//cancel
     }
     (void) suggestions; // display suggestions somehow
     [composedString setString:suggestions[0]];
     
-    NSLog(@"ParrotComposer -inputText: composed %@ so far", suggestions[0]);
+    NSLog(@"BowdlatorComposer -inputText: composed %@ so far", suggestions[0]);
  
     [originalString appendString:string];
     return YES;

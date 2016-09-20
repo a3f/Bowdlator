@@ -1,11 +1,3 @@
-//
-//  acceptor.h
-//  ParrotIM
-//
-//  Created by Ahmad Fatoum on 19/09/16.
-//  Copyright © 2016 a3f.at. All rights reserved.
-//
-
 #ifndef acceptor_h
 #define acceptor_h
 

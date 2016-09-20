@@ -38,10 +38,10 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSCustomObject" id="351578941">
-				<string key="NSClassName">ParrotAppDelegate</string>
+				<string key="NSClassName">BowdlatorAppDelegate</string>
 			</object>
 			<object class="NSCustomObject" id="45684309">
-				<string key="NSClassName">ParrotInputManager</string>
+				<string key="NSClassName">BowdlatorInputManager</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -144,7 +144,7 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">ParrotAppDelegate</string>
+					<string key="className">BowdlatorAppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -155,7 +155,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>ParrotInputManager</string>
+							<string>BowdlatorInputManager</string>
 							<string>NSMenu</string>
 						</object>
 					</object>
@@ -170,7 +170,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">inputManager</string>
-								<string key="candidateClassName">ParrotInputManager</string>
+								<string key="candidateClassName">BowdlatorInputManager</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">menu</string>
@@ -180,15 +180,15 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Sources/ParrotAppDelegate.h</string>
+						<string key="minorKey">Sources/BowdlatorAppDelegate.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">ParrotInputManager</string>
+					<string key="className">BowdlatorInputManager</string>
 					<string key="superclassName">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Sources/ParrotInputManager.h</string>
+						<string key="minorKey">Sources/BowdlatorInputManager.h</string>
 					</object>
 				</object>
 			</object>
@@ -527,7 +527,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../ParrotIM.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../BowdlatorIM.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

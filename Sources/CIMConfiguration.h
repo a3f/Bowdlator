@@ -1,11 +1,3 @@
-//
-//  CIMConfiguration.h
-//  CharmIM
-//
-//  Created by youknowone on 11. 9. 4..
-//  Copyright 2011 youknowone.org. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 ICEXTERN NSString *kCIMLastHangulInputMode;
@@ -26,9 +18,6 @@ defCIMConfigurationItem(CIMConfigurationBoolItem, BOOL);
 
 #define CIMConfigurationSetObjectForField(CONF, OBJ, FIELD)   { [CONF->FIELD autorelease]; CONF->FIELD = [OBJ retain]; }
 
-/*!
-    @brief  NSUserDefaults 에 설정을 저장하고 가져온다.
-*/
 @interface CIMConfiguration : NSObject {
 @private
     NSMutableDictionary *pFieldKeys;

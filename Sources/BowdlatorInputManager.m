@@ -1,20 +1,12 @@
-//
-//  CIMInputManager.m
-//  CharmIM
-//
-//  Created by youknowone on 11. 9. 1..
-//  Copyright 2011 youknowone.org. All rights reserved.
-//
-
-#import "ParrotInputManager.h"
+#import "BowdlatorInputManager.h"
 
 #import "CIMConfiguration.h"
 #import "CIMInputHandler.h"
-#import "ParrotComposer.h"
+#import "BowdlatorComposer.h"
 
 #define DEBUG_INPUTMANAGER TRUE
 
-@implementation ParrotInputManager
+@implementation BowdlatorInputManager
 @synthesize server, configuration, handler, currentComposer;
 
 - (id)init
@@ -29,7 +21,7 @@
         ICLog(DEBUG_INPUTMANAGER, @"\tserver: %@ / handler: %@", self->server, self->handler);
 
         // Only composer for this project
-        self->currentComposer = [[ParrotComposer alloc] init];
+        self->currentComposer = [[BowdlatorComposer alloc] init];
     }
     return self;
 }
