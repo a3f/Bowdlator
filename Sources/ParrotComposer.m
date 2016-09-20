@@ -7,6 +7,9 @@
 //
 
 #include <poll.h>
+#include <sys/socket.h>
+#include "acceptor.h"
+#include "logerrno.h"
 #import "ParrotComposer.h"
 
 @implementation ParrotComposer
@@ -102,44 +105,79 @@
 static pid_t pcreate(int fds[2], const char *cmd, char **args);
 
 //FIXME what happens with non-characters? arrow keys for example
-- (BOOL)inputText:(NSString *)string_ key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender {
-    if (pipes[0] < 0) {
-        NSLog(@"Forking");
-        pid = pcreate(pipes, "/Users/a3f/symlinks/inputfilter", (char*[]){NULL});
-        NSLog(@"ParrotComposer -pcreate: InputFilter has pid %d.", pid);
-        ufd.fd = pipes[1];
-    }
+- (BOOL)inputText:(NSString *)string key:(NSInteger)keyCode modifiers:(NSUInteger)flags client:(id)sender {
     self.endian = nil;
     //FIXME modifies!
     if (keyCode == 0x33) {
-        NSLog(@"Backspacke");
+        NSLog(@"Backspace");
         if ([originalString length] == 0) return NO;
         [originalString deleteCharactersInRange:NSMakeRange([originalString length]-1, 1)];
-        string_ = @"\b";
+        string = @"\b";
     }
 
-    NSString *string = [string_ stringByAppendingString:@"\n"];
-    ssize_t nbytes;
-    nbytes = write(pipes[1], string.UTF8String, string.length);
-    NSLog(@"Wrote %zd bytes: [%@]", nbytes, string);
-    char buf[160];//what size?
-    nbytes = read(pipes[0], buf, sizeof buf);
-    buf[nbytes] = '\0';
-    NSLog(@"Read %zd bytes: [%s]", nbytes, buf);
-    if (nbytes < 2) {
-        NSLog(@"ParrotComposer -inputText: reading failed %d", errno);
-        [self cancelComposition];
-        return NO;//cancel
+    ssize_t nbytes = -1;
+    for (int i = 0; i <= maxfd; i++) {
+        if (FD_ISSET(i, &filters)) {
+            NSUInteger bytes = [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+            nbytes = write(i, string.UTF8String, bytes + 1);
+            if (nbytes == -1) {
+                logerrno("write");
+                FD_CLR(i, &filters);
+            }
+        }
     }
-    NSString *str = [NSString stringWithUTF8String:buf];
-    NSArray *suggestions = [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    if (nbytes == -1) {
+        [self cancelComposition];
+        return NO; //cancel
+    }
+
+    NSLog(@"Wrote %zd bytes: [%@]", nbytes, string);
+    fd_set responsive_filters = filters;
+    //TODO: loop
+    int n = select(maxfd+1, &responsive_filters, NULL, NULL, &(struct timeval) {.tv_usec=100000});
+    if (n < 0) {
+        logerrno("select");
+    }
+    
+    NSMutableArray *suggestions = [NSMutableArray array];
+    for (int i = 0; i <= maxfd; i++) {
+        if (!FD_ISSET(i, &responsive_filters))
+            continue;
+        
+        char buf[161];//what size?
+        nbytes = read(i, buf, sizeof buf - 1);
+        if (nbytes == 0) {
+            FD_CLR(i, &filters);
+            shutdown(i, SHUT_RDWR);
+            close(i);
+        }
+        NSLog(@"Read %zd bytes: [%.*s] from %d", nbytes, (int)nbytes, buf, i);
+        if (buf[nbytes-1] != '\0') {
+            buf[nbytes++] = '\0';
+        }
+        char *pbuf = buf;
+        while (nbytes) {
+            if (*pbuf == '\4') {
+                [composedString setString:suggestions[0]];
+                [self cancelComposition];
+                NSLog(@"ParrotComposer -inputText: Ocomposition finished: %@", suggestions[0]);
+                return NO;
+            }
+            NSString *str = [NSString stringWithUTF8String:pbuf];
+            NSUInteger len = [str lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+            NSLog(@"String (nbytes=%zd): %s-%@", nbytes, pbuf, str);
+            [suggestions addObject: str];
+            nbytes -= len + 1;
+            pbuf += len + 1;
+        }
+    }
+    if (suggestions.count == 0) {
+            NSLog(@"ParrotComposer -inputText: no suggestions received");
+            [self cancelComposition];
+            return NO;//cancel
+    }
     (void) suggestions; // display suggestions somehow
     [composedString setString:suggestions[0]];
-    if (buf[nbytes-2] == '\4') {
-        [self cancelComposition];
-        NSLog(@"ParrotComposer -inputText: composition finished: %@", suggestions[0]);
-        return NO;
-    }
     
     NSLog(@"ParrotComposer -inputText: composed %@ so far", suggestions[0]);
  
@@ -148,36 +186,3 @@ static pid_t pcreate(int fds[2], const char *cmd, char **args);
 }
 
 @end
-static pid_t pcreate(int fds[2], const char *cmd, char **args) {
-    pid_t pid;
-    int pipes[4];
-    
-    
-    if (pipe(&pipes[0]) == -1) return -1; /* Parent read/child write pipe */
-    if (pipe(&pipes[2]) == -1) return -1; /* Child read/parent write pipe */
-    
-    pid = fork();
-    switch(pid) {
-        case -1:
-            return -1;
-        case 0:
-            close(pipes[0]);
-            dup2(pipes[1], 1);
-            dup2(pipes[2], 0);
-            close(pipes[3]);
-            
-            execv(cmd, args);
-        default:
-            /* Parent process */
-            fds[0] = pipes[0];
-            fds[1] = pipes[3];
-            
-            close(pipes[1]);
-            close(pipes[2]);
-            
-            return pid;
-    }
-    return -1;
-}
-
-
