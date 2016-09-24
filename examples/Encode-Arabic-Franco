@@ -1,37 +1,33 @@
-#!/usr/bin/perl -CS
+#!/usr/bin/perl
 use strict;
 use warnings;
-use UI::Bowdlator::InputFilter;
+use UI::Bowdlator::Filter;
 use Encode::Arabic::Franco;
+use open ':std', ':encoding(UTF-8)';
 use utf8;
 
 print "$0 starting..\n";
-my $filt = UI::Bowdlator::InputFilter->new();
-die "Bowdlator server not online\n" unless $filt;
+my $bowdlator = UI::Bowdlator::Filter->new()
+    or die "Bowdlator server not online\n";
 
 my $composed = '';
-while ($filt->getKey) {
-    print "got " . (length $_). "b: chr=$_ ord=" . (ord $_), "\n";
-    $_ = substr $_, 0, 1;
+while ($bowdlator->getKey(handle_backspace => \$composed)) {
 
-    if (/^[\b]/) {
-        chop $composed;
-        $_ = chop $composed;
-    }
-
-    if (/^(§|[^\41-\176])/) {
-        print "commit\n";
+    if (/^[^[:graph:]]/a) { # non graphical character ends composition
         if ($composed =~ /^[`§]|[§`]$/) {
             $composed =~ s/[§`]//g;
         } else {
+            print "input: $composed\t";
             $composed =~ s/-/ـ/g; # ta6weel
             $composed = decode "franco-arabic", $composed;
         }
-        $filt->commit($composed);
+
+        print "committed: $composed\n";
+        $bowdlator->commit(\$composed);
         next;
     }
 
     $composed .= $_;
-    print "suggest $composed\n";
-    $filt->suggest($composed);
+
+    $bowdlator->suggest($composed);
 }

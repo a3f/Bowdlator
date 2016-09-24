@@ -1,29 +1,21 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
-use UI::Bowdlator::InputFilter;
+use UI::Bowdlator::Filter;
 
-print "$0 starting..\n";
-my $filt = UI::Bowdlator::InputFilter->new();
-die "Bowdlator server not online\n" unless $filt;
+# connect to Bowdlator server
+my $bowdlator = UI::Bowdlator::Filter->new()
+    or die "Bowdlator server not online\n";
 
 my $composed = '';
-while ($filt->getKey) {
-    print "got " . (length $_). "b: chr=$_ ord=" . (ord $_), "\n";
-    $_ = substr $_, 0, 1;
+while ($bowdlator->getKey(handle_backspace => \$composed)) {
 
-    if (/^[\b]/) {
-        chop $composed;
-        $_ = chop $composed;
-    }
-
-    if (/^[^\41-\176]/) {
-        print "commit\n";
-        $filt->commit($composed);
+    if (/^[^[:graph:]]/a) { # non graphical character ends composition
+        $bowdlator->commit(\$composed);
         next;
     }
 
     $composed .= uc;
-    print "suggest $composed\n";
-    $filt->suggest($composed);
+
+    $bowdlator->suggest($composed);
 }
