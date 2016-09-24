@@ -20,7 +20,7 @@ Check out the [`examples/`]() for sample filters. Following are currently includ
 * [Vulgarize.rb](): automatically decensors a select number of English cuss words
 * [caseFilter.c](): suggests the uppercase, lowercase and normal version while typing. Your pinky will thank you for it
 * [Encode.pl](): Allows using an arbitary Perl [Encode]() module for filtering all entered words. Following scripts are implemented with it:
-    * [Encode-LaTeX-Unicode](): Translates a good chunk of `\texnotation` into Unicode. You enter `tex`-mode by `\` and leave it by pressing a non-printable key
+    * [TeX-Encode](): Translates a good chunk of `\texnotation` into Unicode. You enter `tex`-mode by `\` and leave it by pressing a non-printable key
     * [Encode-Arabic-Franco](): Translates Franco-Arabic/Arabizy/Chat-Arabic (a transliteration using Latin and numbers) into actual Arabic script using the [Encode::Arabic::Franco]() CPAN module
 
 ## Why? and How?
