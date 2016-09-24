@@ -57,3 +57,5 @@ Copyright (C) 2016 Ahmad Fatoum
 
 The InputMethod is free software; you can redistribute it and/or modify
 it under the terms of the GNU GPL3+. See [LICENSE]() for the full terms. Additionally, the [`examples/`]() are in the public domain.
+
+Logo by [Islam Negm](https://www.linkedin.com/in/islamnegm).
