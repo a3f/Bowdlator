@@ -14,13 +14,14 @@
 		38863C6E140E64EB00A8ED76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38863C6C140E64EB00A8ED76 /* InfoPlist.strings */; };
 		38863C71140E64EB00A8ED76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863C70140E64EB00A8ED76 /* main.m */; };
 		38863C97140E669000A8ED76 /* CIMInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863C96140E669000A8ED76 /* CIMInputController.m */; };
-		38863C99140E677900A8ED76 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38863C98140E677900A8ED76 /* InputMethodKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		38863D13140F1A7300A8ED76 /* ICUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D12140F1A7300A8ED76 /* ICUtility.m */; };
 		38863D31140F282100A8ED76 /* CIMInputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38863D30140F282000A8ED76 /* CIMInputHandler.m */; };
 		B727CB681D8F9A6B00B96B54 /* acceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B727CB671D8F9A6B00B96B54 /* acceptor.m */; };
 		B797E2011D914B5500C0799C /* BowdlatorComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B797E1FB1D914B5500C0799C /* BowdlatorComposer.m */; };
 		B797E2031D914B5500C0799C /* BowdlatorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B797E2001D914B5500C0799C /* BowdlatorAppDelegate.m */; };
 		B797E2051D914BF400C0799C /* BowdlatorInputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B797E2041D914BF400C0799C /* BowdlatorInputManager.m */; };
+		B7C538541D9707C30035E3DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C538531D9707C30035E3DA /* Images.xcassets */; };
+		B7C538561D9709DF0035E3DA /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C538551D9709DF0035E3DA /* InputMethodKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,8 +43,6 @@
 		38162DCE1410A95A0077AA2D /* CIMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIMCommon.h; sourceTree = "<group>"; };
 		38162E1314126ACE0077AA2D /* CIMComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIMComposer.m; sourceTree = "<group>"; };
 		38162E4714128A2C0077AA2D /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		383A93C51414FF1C00235A3B /* ParrotComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParrotComposer.h; sourceTree = "<group>"; };
-		383A93C61414FF1C00235A3B /* ParrotComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParrotComposer.m; sourceTree = "<group>"; };
 		38863C5F140E64EB00A8ED76 /* Bowdlator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bowdlator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38863C63140E64EB00A8ED76 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38863C66140E64EB00A8ED76 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -55,15 +54,10 @@
 		38863C70140E64EB00A8ED76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		38863C95140E669000A8ED76 /* CIMInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIMInputController.h; sourceTree = "<group>"; };
 		38863C96140E669000A8ED76 /* CIMInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIMInputController.m; sourceTree = "<group>"; };
-		38863C98140E677900A8ED76 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/InputMethodKit.framework; sourceTree = DEVELOPER_DIR; };
 		38863D11140F1A7300A8ED76 /* ICUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICUtility.h; sourceTree = "<group>"; };
 		38863D12140F1A7300A8ED76 /* ICUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICUtility.m; sourceTree = "<group>"; };
-		38863D2C140F23CD00A8ED76 /* ParrotInputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParrotInputManager.h; sourceTree = "<group>"; };
-		38863D2D140F23CD00A8ED76 /* ParrotInputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParrotInputManager.m; sourceTree = "<group>"; };
 		38863D2F140F282000A8ED76 /* CIMInputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIMInputHandler.h; sourceTree = "<group>"; };
 		38863D30140F282000A8ED76 /* CIMInputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIMInputHandler.m; sourceTree = "<group>"; };
-		38863D34140F421800A8ED76 /* ParrotAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParrotAppDelegate.h; sourceTree = "<group>"; };
-		38863D35140F421800A8ED76 /* ParrotAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParrotAppDelegate.m; sourceTree = "<group>"; };
 		B727CB621D8F82D700B96B54 /* logerrno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logerrno.h; sourceTree = "<group>"; };
 		B727CB651D8F891500B96B54 /* acceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acceptor.h; sourceTree = "<group>"; };
 		B727CB671D8F9A6B00B96B54 /* acceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acceptor.m; sourceTree = "<group>"; };
@@ -73,7 +67,8 @@
 		B797E1FF1D914B5500C0799C /* BowdlatorAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BowdlatorAppDelegate.h; sourceTree = "<group>"; };
 		B797E2001D914B5500C0799C /* BowdlatorAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowdlatorAppDelegate.m; sourceTree = "<group>"; };
 		B797E2041D914BF400C0799C /* BowdlatorInputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BowdlatorInputManager.m; sourceTree = "<group>"; };
-		B7B58C4A1D914E14006267CB /* Parrot copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Parrot copy-Info.plist"; path = "/Users/a3f/dl/parrotim/Parrot copy-Info.plist"; sourceTree = "<absolute>"; };
+		B7C538531D9707C30035E3DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Bowdlator/Images.xcassets; sourceTree = "<group>"; };
+		B7C538551D9709DF0035E3DA /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = System/Library/Frameworks/InputMethodKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38863C99140E677900A8ED76 /* InputMethodKit.framework in Frameworks */,
+				B7C538561D9709DF0035E3DA /* InputMethodKit.framework in Frameworks */,
 				38863C64140E64EB00A8ED76 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,8 +91,6 @@
 				B797E1FC1D914B5500C0799C /* BowdlatorComposer.h */,
 				38162DCA1410A4A50077AA2D /* CIMComposer.h */,
 				38162E1314126ACE0077AA2D /* CIMComposer.m */,
-				383A93C51414FF1C00235A3B /* ParrotComposer.h */,
-				383A93C61414FF1C00235A3B /* ParrotComposer.m */,
 			);
 			name = Composers;
 			sourceTree = "<group>";
@@ -105,11 +98,11 @@
 		38863C4E140E62D100A8ED76 = {
 			isa = PBXGroup;
 			children = (
+				B7C538531D9707C30035E3DA /* Images.xcassets */,
 				38863D10140F1A7300A8ED76 /* IdealCocoa */,
 				38863C69140E64EB00A8ED76 /* Sources */,
 				38863C62140E64EB00A8ED76 /* Frameworks */,
 				38863C60140E64EB00A8ED76 /* Products */,
-				B7B58C4A1D914E14006267CB /* Parrot copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,8 +117,8 @@
 		38863C62140E64EB00A8ED76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7C538551D9709DF0035E3DA /* InputMethodKit.framework */,
 				38863C63140E64EB00A8ED76 /* Cocoa.framework */,
-				38863C98140E677900A8ED76 /* InputMethodKit.framework */,
 				38863C65140E64EB00A8ED76 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -181,8 +174,6 @@
 				B797E2041D914BF400C0799C /* BowdlatorInputManager.m */,
 				38162DCE1410A95A0077AA2D /* CIMCommon.h */,
 				B797E1FE1D914B5500C0799C /* BowdlatorInputManager.h */,
-				38863D2C140F23CD00A8ED76 /* ParrotInputManager.h */,
-				38863D2D140F23CD00A8ED76 /* ParrotInputManager.m */,
 				38863D2F140F282000A8ED76 /* CIMInputHandler.h */,
 				38863D30140F282000A8ED76 /* CIMInputHandler.m */,
 				3802E4631413A9FF00256B54 /* CIMConfiguration.h */,
@@ -197,8 +188,6 @@
 			children = (
 				B797E1FF1D914B5500C0799C /* BowdlatorAppDelegate.h */,
 				B797E2001D914B5500C0799C /* BowdlatorAppDelegate.m */,
-				38863D34140F421800A8ED76 /* ParrotAppDelegate.h */,
-				38863D35140F421800A8ED76 /* ParrotAppDelegate.m */,
 				38863C95140E669000A8ED76 /* CIMInputController.h */,
 				38863C96140E669000A8ED76 /* CIMInputController.m */,
 			);
@@ -232,7 +221,7 @@
 		38863C50140E62D100A8ED76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = a3f.at;
 				TargetAttributes = {
 					38863C5E140E64EB00A8ED76 = {
@@ -263,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C538541D9707C30035E3DA /* Images.xcassets in Resources */,
 				38863C6E140E64EB00A8ED76 /* InfoPlist.strings in Resources */,
 				38162E4614128A2C0077AA2D /* MainMenu.xib in Resources */,
 			);
@@ -305,12 +295,15 @@
 		38863C55140E62D100A8ED76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -337,12 +330,15 @@
 		38863C56140E62D100A8ED76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -368,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -385,7 +382,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Sources/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = at.a3f.inputmethod.server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -398,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -412,6 +410,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Sources/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = at.a3f.inputmethod.server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
