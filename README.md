@@ -1,14 +1,23 @@
 # THIS IS WIP.
-# Bowdlator
-
-Bowdlator is an extensible [InputMethod](https://developer.apple.com/reference/inputmethodkit) for Mac OS X.
-
->**bowd**lerize _/bōd-lə-ˌrīz/_ <br>
->&emsp;&emsp; The omission or removal of material considered vulgar or indecent.
-
->trans**lator** _/ˈtɹænzleɪtɚ/_ <br>
->&emsp;&emsp; One that makes a new version of a source material in a different language or format.
-
+<!-- It's 1999 all over again ;-) -->
+<table style="width:100%;border-collapse: collapse;">
+  <tr>
+    <td>
+      <img src="https://github.com/a3f/Bowdlator/blob/master/Bowdlator/Images.xcassets/AppIcon.appiconset/icon256x256.png" alt="Bowdlator icon">
+    </td>
+    <td>
+      <h1>Bowdlator</h1>
+        Bowdlator is an extensible <a href="https://developer.apple.com/reference/inputmethodkit">InputMethod</a> for Mac OS X.
+        <br><br>
+        <blockquote>   
+          <strong>bowd</strong>lerize <em>/bōd-lə-ˌrīz/</em>
+          <ul><li>The omission or removal of material considered vulgar or indecent.</li></ul>
+          trans<strong>lator</strong> <em>/ˈtɹænzleɪtɚ/</em>
+          <ul><li>One that makes a new version of a source material in a different language or format.</li></ul>
+        </blockquote>
+    </td> 
+  </tr>
+</table>
 ## What is it?
 Everything typed in, while the Bowdlator InputMethod is selected, is written into a unix domain socket at `/usr/local/var/run/bowdlator.sock`.
 
@@ -26,14 +35,14 @@ Check out the [`examples/`](https://github.com/a3f/Bowdlator/blob/master/example
 ## Why? and How?
 Microsoft's Cairo Research Lab wrote a fine piece of software called [Maren](https://www.microsoft.com/en-us/download/details.aspx?id=20530), offering JIT transliteration to actual Arabic:
 
-Unfortunately, such a program doesn't exist for OS X, so I wrote this one. Prime goal was making it maximally extensible by allowing arbitary filter scripts.
+Unfortunately, such a program doesn't exist for OS X, so I wrote this one. Prime goal was making it extensible by allowing arbitary filter scripts.
 
-After connecting to the `AF_UNIX` socket, a nul-terminated string corresponding to the character typed will be sent. The filter then replies with the text to display and optionally a suggestions list and/or a commit instruction (`\4` ASCII `ETX`).
+After connecting to the `AF_UNIX` socket, a nul-terminated string corresponding to the character typed will be sent. The filter then replies with the text to display and optionally a candidate list and/or a commit instruction (`\4` ASCII `ETX`).
 
 Sample filters in C, Perl, Python and Ruby are provided in `examples/`. If no filter is running, typed text is posted to the active process as is.
 
 ## Install
-1. Download binary release [HERE](https://github.com/a3f/bowdlator/downloads)
+1. Download binary release [HERE](https://github.com/a3f/bowdlator/releases)
 1. Extract it
 1. Copy it to `~/Library/Input Methods` or `/Library/Input Methods`
 1. Logout and Login (<kbd>shift</kbd>+<kbd>command</kbd>+<kbd>Q</kbd>)
