@@ -15,13 +15,13 @@ Everything typed in, while the Bowdlator InputMethod is selected, is written int
 You can write scripts (called filters) that connect to the socket and transform the input.
 
 ## What could I use that for?
-Check out the [`examples/`]() for sample filters. Following are currently included:
-* [Bowdlerizye.py](): automatically censors a select number of English cuss words
-* [Vulgarize.rb](): automatically decensors a select number of English cuss words
+Check out the [`examples/`](https://github.com/a3f/Bowdlator/blob/master/examples) for sample filters. Following are currently included:
+* [Bowdlerize.py](https://github.com/a3f/Bowdlator/blob/master/examples/Bowdlerize.py): automatically censors a select number of English cuss words
+* [Vulgarize.rb](https://github.com/a3f/Bowdlator/blob/master/examples/Vulgarize.rb): automatically decensors a select number of English cuss words
 * [caseFilter.c](): suggests the uppercase, lowercase and normal version while typing. Your pinky will thank you for it
-* [Encode.pl](): Allows using an arbitary Perl [Encode]() module for filtering all entered words. Following scripts are implemented with it:
-    * [TeX-Encode](): Translates a good chunk of `\texnotation` into Unicode. You enter `tex`-mode by `\` and leave it by pressing a non-printable key
-    * [Encode-Arabic-Franco](): Translates Franco-Arabic/Arabizy/Chat-Arabic (a transliteration using Latin and numbers) into actual Arabic script using the [Encode::Arabic::Franco]() CPAN module
+* [Encode.pl](): Allows using an arbitary Perl [Encode]() module for filtering all entered words. 
+* [TeX-Encode](https://github.com/a3f/Bowdlator/blob/master/examples/TeX-Encode): Translates a good chunk of `\texnotation` into Unicode. You enter `tex`-mode by `\` and leave it by pressing a non-printable key
+* [Encode-Arabic-Franco](https://github.com/a3f/Bowdlator/blob/master/examples/Encode-Arabic-Franco): Translates Franco-Arabic/Arabizy/Chat-Arabic (a transliteration using Latin and numbers) into actual Arabic script using the [Encode::Arabic::Franco]() CPAN module
 
 ## Why? and How?
 Microsoft's Cairo Research Lab wrote a fine piece of software called [Maren](https://www.microsoft.com/en-us/download/details.aspx?id=20530), offering JIT transliteration to actual Arabic:
